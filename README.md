@@ -1,4 +1,4 @@
-# search-github-users
+# search-github-users-vue
 search github users app using vue.js
 
 
