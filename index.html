@@ -17,11 +17,11 @@
 
         <article class="content">
             <h1 class="content-title">
-                {{title}}
+                Buscador de perfiles
             </h1>
 
-            <form class="search">
-                <input type="text" required class="search-input" placeholder="Search Github users...">
+            <form class="search" v-on:submit.prevent="doSearch()">
+                <input v-model="search" type="text" required class="search-input" placeholder="Search Github users...">
                 <input type="submit" class="search-submit" value="Search">
             </form>
 
