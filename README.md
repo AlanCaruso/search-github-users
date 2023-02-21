@@ -2,7 +2,7 @@
 search github users app using vue.js
 
 
-RUN APP
-Open index.html in browser
+
+Open index in browser
 
 Enjoy :)
