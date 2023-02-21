@@ -25,7 +25,17 @@
                 <input type="submit" class="search-submit" value="Search">
             </form>
 
-            <div class="result-error"></div>
+            <div class="result" v-if="result">
+                <h2 class="result-name">{{result.name}}</h2>
+                <img v-bind:src="result.avatar_url" :alt="result.name" class="result-avatar">
+                <p class="result-bio">
+                    {{result.bio}}
+                    <br>
+                    <a v-bind:href="result.blog" class="result-blog">{{result.blog}}</a>
+                </p>
+            </div>
+            <div v-else>Waiting for search..</div>
+            <div v-if="error" class="result-error">{{error}}</div>
         </article>
     </div>
     <script src="js/main.js"></script>
