@@ -20,7 +20,8 @@
         <article class="content">
             <div class="min-h-screen bg-gray-100 flex justify-center items-center">
                 <div class="bg-white p-4 w-96 rounded-md">
-                    <h1 class="text-lg font-bold">Buscador de perfiles</h1>
+                    <h1 class="text-slate-900 text-base font-medium tracking-tight">Buscador de
+                        perfiles</h1>
                     <form v-on:submit.prevent="doSearch()"
                         class="mt-5 mb-2 border-2 py-1 px-3 flex justify-between rounde-md rounded-md">
                         <input class="flex-grow outline-none text-gray-600 focus:text-blue-600" type="text"
@@ -36,18 +37,20 @@
                     <div class="result" v-if="result">
                         <h2 class="result-name">{{result.name}}</h2>
                         <img v-bind:src="result.avatar_url" :alt="result.name" class="result-avatar">
-                        <p class="result-bio">
+                        <p class="result-bio text-slate-500 dark:text-slate-400 text-sm">
                             {{result.bio}}
-                            <br>
-                            <a v-bind:href="result.blog" class="result-blog">{{result.blog}}</a>
+                        <p></p>
+                        <a v-bind:href="result.blog" class="result-blog">{{result.blog}}</a>
                         </p>
+
                     </div>
+                    <div class="waiting-text" v-else>Waiting for search..</div>
+                    <div v-if="error" class="result-error">{{error}}</div>
                 </div>
             </div>
 
 
-            <div class="waiting-text" v-else>Waiting for search..</div>
-            <div v-if="error" class="result-error">{{error}}</div>
+
         </article>
 
     </div>
